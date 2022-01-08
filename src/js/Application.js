@@ -13,8 +13,8 @@ export default class Application extends EventEmitter {
 
     const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
     let count = 0;
-    this.beat = new Beat() ; 
-    this.beat.on("bit",()=> {
+    this._beat = new Beat() ; 
+    this._beat.addListener("bit",()=> {
       if(count<lyrics.length){
       this._create(lyrics,count++);
       }
